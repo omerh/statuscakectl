@@ -45,7 +45,7 @@ statuscakectl delete uptime --id 1111111
 
 If you'ed like to test them out I would appriciate it if you do it via this affiliation [link](https://www.statuscake.com/statuscake-long-page/?a_aid=5d6fc4349afd6&a_bid=af013c39) to help support my time working on this cool tool.
 
-## build
+## Build
 
 ```bash
 # Use go modules add the following env var GO111MODULE=on
