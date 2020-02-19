@@ -3,7 +3,7 @@
 [Statuscake](https://www.statuscake.com/statuscake-long-page/?a_aid=5d6fc4349afd6&a_bid=af013c39) is a Website Uptime & Performance Monitoring.
 
 They offer a free plan and paid plans.
-I
+
 This is a small binary written in Golnag which allow you to control statuscake via API
 
 Currently allow you to create/list/delete uptime tests and ssl monitoring.
