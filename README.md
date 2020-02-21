@@ -1,16 +1,16 @@
 # statuscakectl
 
-[Statuscake](https://www.statuscake.com/statuscake-long-page/?a_aid=5d6fc4349afd6&a_bid=af013c39) is a Website Uptime & Performance Monitoring.
+[Statuscake](https://www.statuscake.com/statuscake-long-page/?a_aid=5d6fc4349afd6&a_bid=af013c39) is a Website Uptime & Performance Monitoring tool.
 
 They offer a free plan and paid plans.
 
-This is a small binary written in Golnag which allow you to control statuscake via API
+This is a small binary written in Golang which allows you to control statuscake via API.
 
-Currently allow you to create/list/delete uptime tests and ssl monitoring.
+Currently allows you to create/list/delete uptime tests and ssl monitoring.
 
 ## Configuration
 
-Set the following environment variables from statuscake in your machine
+Set the following environment variables from statuscake in your machine.
 
 ```bash
 export STATUSCAKE_USER=your_statuscake_user
@@ -43,7 +43,7 @@ statuscakectl delete uptime -d https://www.domain.com
 statuscakectl delete uptime --id 1111111
 ```
 
-If you'ed like to test them out I would appriciate it if you do it via this affiliation [link](https://www.statuscake.com/statuscake-long-page/?a_aid=5d6fc4349afd6&a_bid=af013c39) to help support my time working on this cool tool.
+If you'd like to test them out I would appriciate it if you do it via this affiliation [link](https://www.statuscake.com/statuscake-long-page/?a_aid=5d6fc4349afd6&a_bid=af013c39) to help support my time working on this cool tool.
 
 ## Build
 
