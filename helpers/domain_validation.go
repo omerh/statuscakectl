@@ -24,3 +24,12 @@ func DomainValidation(domain string) bool {
 
 	return true
 }
+
+// GetHostnameFromUrl returns hostname from given url
+func GetHostnameFromUrl(urlInput string) (string, error) {
+	u, err := url.Parse(urlInput)
+	if err != nil {
+		return "", err
+	}
+	return u.Hostname(), nil
+}
