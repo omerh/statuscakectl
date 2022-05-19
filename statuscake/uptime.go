@@ -100,7 +100,7 @@ func ListUptime(api, user, key string) []UptimeCheckResult {
 }
 
 // CreateUptimeCheck create an uptime check
-func CreateUptimeCheck(domain string, checkrate, timeout, confirmation, virus, donotfind, realbrowser, trigger, sslalert, follow int, contacts, testType, findstring, api, user, key string) bool {
+func CreateUptimeCheck(websiteName, domain string, checkrate, timeout, confirmation, virus, donotfind, realbrowser, trigger, sslalert, follow int, contacts, testType, findstring, api, user, key string) bool {
 	target, err := url.Parse(domain)
 	if err != nil {
 		fmt.Println("Please make sure to enter a valid domain (e.g https://www.domain.com)")
@@ -112,7 +112,7 @@ func CreateUptimeCheck(domain string, checkrate, timeout, confirmation, virus, d
 	}
 
 	p := url.Values{}
-	p.Add("WebsiteName", domain)
+	p.Add("WebsiteName", websiteName)
 	p.Add("WebsiteURL", domain)
 	p.Add("CheckRate", strconv.Itoa(checkrate))
 	p.Add("Timeout", strconv.Itoa(timeout))
