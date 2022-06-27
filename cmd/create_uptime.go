@@ -19,6 +19,11 @@ var createCmdUptime = &cobra.Command{
 			cmd.Usage()
 			return
 		}
+		name, _ := cmd.Flags().GetString("name")
+		if name == "" {
+			name = domain
+		}
+
 		checkrate, _ := cmd.Flags().GetInt("checkrate")
 		timeout, _ := cmd.Flags().GetInt("timeout")
 		confirmation, _ := cmd.Flags().GetInt("confirmation")
@@ -45,7 +50,7 @@ var createCmdUptime = &cobra.Command{
 			return
 		}
 
-		createCheck := statuscake.CreateUptimeCheck(domain, checkrate, timeout, confirmation, virus,
+		createCheck := statuscake.CreateUptimeCheck(name, domain, checkrate, timeout, confirmation, virus,
 			donotfind, realbrowser, trigger, sslalert, follow, contacts, testType, findstring, api, user, key)
 		if !createCheck {
 			fmt.Println("Failed to create uptime check")
@@ -64,6 +69,7 @@ func init() {
 	createCmdUptime.Flags().Int("confirmation", 1, "Confimation servers before alert (default 1)")
 	createCmdUptime.Flags().Int("virus", 1, "Enable virus checking or not. default 1 = enable")
 	createCmdUptime.Flags().String("findstring", "", "A string that should either be found or not found")
+	createCmdUptime.Flags().String("name", "", "A name of the test")
 	createCmdUptime.Flags().Int("donotfind", 0, "If the above string should be found to trigger a alert. 1 = will trigger if FindString found")
 	createCmdUptime.Flags().StringP("type", "t", "HTTP", "Type of test type to use: HTTP,TCP,PING (default HTTP)")
 	createCmdUptime.MarkFlagRequired("type")

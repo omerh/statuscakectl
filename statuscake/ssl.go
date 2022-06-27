@@ -91,7 +91,7 @@ func CreateSSLStatuscakeCheck(domain string, checkrate int, contacts string, api
 
 	p := url.Values{}
 	p.Add("domain", domain)
-	p.Add("checkrate", string(checkrate))
+	p.Add("checkrate", fmt.Sprintf("%v", checkrate))
 	p.Add("contact_groups", contacts)
 	p.Add("alert_at", "1,7,30")
 	p.Add("alert_broken", "true")

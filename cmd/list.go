@@ -16,4 +16,5 @@ var listCmd = &cobra.Command{
 func init() {
 	listCmd.AddCommand(listCmdSsl)
 	listCmd.AddCommand(listCmdUptime)
+	listCmd.AddCommand(listCmdPeriods)
 }

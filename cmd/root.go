@@ -32,6 +32,7 @@ func init() {
 	rootCmd.AddCommand(listCmd)
 	rootCmd.AddCommand(createCmd)
 	rootCmd.AddCommand(deleteCmd)
+	rootCmd.AddCommand(calculateSlaCmd)
 
 	// viper
 	viper.AutomaticEnv()

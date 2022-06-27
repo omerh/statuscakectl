@@ -6,7 +6,7 @@ They offer a free plan and paid plans.
 
 This is a small binary written in Golang which allows you to control statuscake via API.
 
-Currently allows you to create/list/delete uptime tests and ssl monitoring.
+Currently allows you to create/list/delete/calculate-sla uptime tests and ssl monitoring.
 
 ## Configuration
 
@@ -31,6 +31,8 @@ docker run -e STATUSCAKE_USER=your_statuscake_user -e STATUSCAKE_KEY=your_key om
 # listing
 statuscakectl list ssl
 statuscakectl list uptime
+statuscakectl list periods --domain www.domain.com
+statuscakectl list periods --test-id 1111111
 
 # create
 statuscakectl create ssl -d domain.com
@@ -41,6 +43,12 @@ statuscakectl delete ssl -d domain.com
 statuscakectl delete ssl --id 1111111
 statuscakectl delete uptime -d https://www.domain.com
 statuscakectl delete uptime --id 1111111
+
+# calculate-sla
+statuscakectl calculate-sla --domains testdomain.com
+statuscakectl calculate-sla --domains foo.com,bar.org --from 2021-12-01 -to 2022-01-01
+statuscakectl calculate-sla --domains foo.com,bar.org --maintenance-start-hour 0 --maintenance-finish-hour 2
+
 ```
 
 If you'd like to test them out I would appriciate it if you do it via this affiliation [link](https://www.statuscake.com/statuscake-long-page/?a_aid=5d6fc4349afd6&a_bid=af013c39) to help support my time working on this cool tool.
